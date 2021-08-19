@@ -3,5 +3,10 @@
 // convenience to get you started writing code faster.
 //
 
-export const twoFer = (name = "you") => `One for ${name}, one for me.`
-
+export const twoFer = (name) => {
+  if (name == undefined || name ==="") {
+    return `One for you, one for me.`;
+  } else {
+  return `One for ` + name + `, one for me.`;
+  }
+};
