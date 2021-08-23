@@ -38,4 +38,8 @@ export class Triangle { // exportando a classe triangulo e nao mais variavel
   get isScalene() { //tres lados diferentes
     return this.isValid && (this.sideA !== this.sideB && this.sideA != this.sideC && this.sideB !== this.sideC);
   }
+
+  get isDegenerate () {
+    return this.isValid && (this.sideA + this.sideB === this.sideC || this.sideB + this.sideC === this.sideA || this.sideA + this.sideC === this.sideB);
+  }
 }
