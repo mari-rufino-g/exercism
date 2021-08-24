@@ -4,19 +4,34 @@
 //
 
 export class Squares {
-  constructor() {
-    throw new Error('Remove this statement and implement this function');
+  selecaoDeNumeros
+  constructor(numero) {
+    this.numero = numero;
+    this.selecaoDeNumeros = [];
+    let contador = 1;
+  
+    while (contador <= numero) {
+      this.selecaoDeNumeros.push(contador++); //armazenar numa array
+    }
   }
 
   get sumOfSquares() {
-    throw new Error('Remove this statement and implement this function');
+    let somaDosQuadrados = this.selecaoDeNumeros.map(function(item) {
+      return Math.pow(item, 2); //retorna o item elevado ao quadrado
+    })
+    let tirarDaArray = somaDosQuadrados.reduce((tirarDaArray, currentElement) => tirarDaArray + currentElement) //soma dos elementos da array 
+    return tirarDaArray;
   }
 
   get squareOfSum() {
-    throw new Error('Remove this statement and implement this function');
+    let somaDaArray = this.selecaoDeNumeros.reduce((somaDaArray, currentElement) => somaDaArray + currentElement) //soma dos elementos da array
+    let quadradoDaSoma = Math.pow(somaDaArray,2); //(1 + 2 + ... + 10)² 
+    return quadradoDaSoma;
   }
 
   get difference() {
-    throw new Error('Remove this statement and implement this function');
+    let diferencaDaSoma = this.squareOfSum - this.sumOfSquares;
+    return diferencaDaSoma;
   }
 }
+
